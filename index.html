@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relogio</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/clock.css">
+    <link rel="stylesheet" href="/styles/weather.css">
 </head>
 <body>
     <main>
@@ -55,6 +57,20 @@
                 <span class="block-time dg-sec">0</span>
                 <span class="block-time dg-sec">0</span>
             </div>
+        </div>
+
+        <div class="weather">
+            <div class="image">
+                <img id="weatherIcon" src="http://openweathermap.org/img/w/10d.png" alt="">
+            </div>
+            <div class="locale">
+                <span id="city">Cidade</span>
+                <span id="temp">22°</span>
+                <p id="description">description</p>
+            </div>
+            <form action="" id="localization">
+                <input class="city" type="text" placeholder="Digite sua cidade">
+            </form>
         </div>
     </main>
 

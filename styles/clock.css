@@ -1,36 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: var(--white);
-    font-family: sans-serif;
-}
-
-:root {
-    --purple: #41066e;
-    --green: #20be50;
-    --green-alt: #2df067;
-    --white: #fff;
-    --background: #0c0114;
-}
-
-body {
-    background: var(--background);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-
 .clock {
     width: 400px;
     height: 400px;
@@ -148,7 +115,8 @@ main {
 
 .clock .bar {
     width: 10px;
-    height: 45px;
+    height: 40px;
+    border-radius: 8px;
     background-color: var(--green);
 }
 
