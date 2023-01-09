@@ -87,17 +87,17 @@ async function weather() {
     const description = document.getElementById('description')
     const temp = document.getElementById('temp')
 
-    elementWeather.classList.add('active')
-
+    
     const city = await getcity(valueCity)
     const weather = await getWeather(city.lat, city.lon)
-
+    
     weatherIcon.attributes.src.value = `http://openweathermap.org/img/w/${weather.icon}.png`
-
+    
     elementCity.innerText = city.description
     description.innerText = weather.description
     temp.innerText = `${weather.temperature}°`
-
+    
+    elementWeather.classList.add('active')
 }
 
 const form = document.getElementById('localization')
