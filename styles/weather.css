@@ -16,7 +16,7 @@
 }
 
 .image img{
-    width: 100%;
+    width: 50px;
     object-fit: cover;
 }
 

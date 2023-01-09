@@ -53,8 +53,6 @@ async function getcity(city) {
         lat: data.coord.lat,
         lon: data.coord.lon,
     } : null;
-
-    console.log(result)
     return result
 }
 
@@ -90,9 +88,14 @@ async function weather() {
     
     const city = await getcity(valueCity)
     const weather = await getWeather(city.lat, city.lon)
+
+    const icon = iconWeather(weather.icon)
     
-    weatherIcon.attributes.src.value = `http://openweathermap.org/img/w/${weather.icon}.png`
-    
+    console.log(icon)
+    weatherIcon.attributes.src.value = `./assets/${icon.nameIcon}.svg`
+    weatherIcon.style.color = icon.color
+
+
     elementCity.innerText = city.description
     description.innerText = weather.description
     temp.innerText = `${weather.temperature}°`
@@ -107,3 +110,148 @@ form.addEventListener('submit', e => {
 
     weather()
 })
+
+function iconWeather(codIcon) {
+
+    
+    if (codIcon === '01d'){
+        let nameIcon = "Sun"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { 
+            nameIcon,
+            color
+        }
+            
+    }
+    
+    if (codIcon === '01n'){
+        let nameIcon = "Moon"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { nameIcon , color}
+            
+    }
+    
+    if (codIcon === '02n'){
+        let nameIcon = "CloudMoon"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { nameIcon , color}
+            
+    }
+    
+    if (codIcon === '02d'){
+        let nameIcon = "CloudSun"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { nameIcon , color}
+            
+    }
+
+    if (codIcon === '03d' || codIcon === '03n'){
+        let nameIcon = "Cloud"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { nameIcon , color}
+            
+    }
+    
+    if (codIcon === '04d' || codIcon === '04n'){
+        let nameIcon = "Cloud"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { nameIcon , color}
+            
+    }
+    
+    if (codIcon === '09d' || codIcon === '09n'){
+        let nameIcon = "CloudRain"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { nameIcon , color}
+            
+    }
+    
+    if (codIcon === '10d' || codIcon === '10n'){
+        let nameIcon = "CloudRain"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        const result = {
+            nameIcon,
+            color
+        }
+
+        return result
+            
+    }
+    
+    if (codIcon === '11d' || codIcon === '11n'){
+        let nameIcon = "CloudLightning"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { nameIcon , color}
+            
+    }
+    
+    if (codIcon === '13d' || codIcon === '13n'){
+        let nameIcon = "Snowflake"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { nameIcon , color}
+            
+    }
+    
+    if (codIcon === '50d' || codIcon === '50n'){
+        let nameIcon = "CloudFog"
+        let color = "#2df067"
+        const hour = new Date().getHours()
+        if(hour > 18) {
+            color = "#41066e"
+        }
+
+        return { nameIcon , color}
+            
+    }
+    
+}
